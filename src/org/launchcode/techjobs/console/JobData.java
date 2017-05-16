@@ -84,6 +84,24 @@ public class JobData {
         return jobs;
     }
 
+    // TODO Task 2 - findByValue option - lets you search within the strings - call from "somewhere in main" search for string in each column - no duplicate returns - if included - return and move on//
+
+    // Needs return statement - how to return something simple/string with a hashmap as your expected return value? //
+
+    public static HashMap<String, String> findByString(String search) {
+
+        loadData();
+
+        ArrayList<HashMap<String, String>> sort = new ArrayList<>();
+
+        for (Integer i = 0; i < sort.size(); i++) {
+            if (sort.contains(search)) {
+                return sort.get(i);
+            } else {
+                return "No matches found";
+            }
+        }
+    }
     /**
      * Read in data from a CSV file and store it in a list
      */

@@ -7,6 +7,10 @@ import java.util.Scanner;
 /**
  * Created by LaunchCode
  */
+
+// TODO Task 3 - program wide make requests case insensitive - but don't change the values in the array or hashmap //
+
+
 public class TechJobs {
 
     private static Scanner in = new Scanner(System.in);
@@ -111,6 +115,11 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+        // Complete - print out job info - read arraylist to locate and print hashmap values 1 row at a time //
+        for (Integer i = 0; i < someJobs.size(); i++) {
+            // TODO Task 1.2 - How to format with leading asterisks and make a new line at each comma? //
+            System.out.println(someJobs.get(i));
+
+        }
     }
 }
