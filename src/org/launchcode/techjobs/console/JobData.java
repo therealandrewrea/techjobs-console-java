@@ -82,7 +82,10 @@ public class JobData {
                 if (lowerString.contains(lowerValue)) {
                     jobs.add(row);
                 }
+
             }
+        } if (0 == jobs.size()) {
+            System.out.println("No Matches Found");
         }
 
         return jobs;
@@ -106,7 +109,12 @@ public class JobData {
                 if (lowerString.contains(lowerSearch))
                     sort.add(row);
                 }
-        } return sort;
+
+        }
+       if (0 == sort.size()) {
+           System.out.println("No Matches Found");
+       }
+       return sort;
     }
     /**
      * Read in data from a CSV file and store it in a list

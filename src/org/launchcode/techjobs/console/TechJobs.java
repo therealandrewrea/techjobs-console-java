@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Created by LaunchCode
  */
 
-// TODO Task 3 - program wide make requests case insensitive - but don't change the values in the array or hashmap //
+// Task 3 - program wide make requests case insensitive - but don't change the values in the array or hashmap //
 
 
 public class TechJobs {
