@@ -119,11 +119,17 @@ public class TechJobs {
         // Complete - print out job info - read arraylist to locate and print hashmap values 1 row at a time //
         for (int i = 0; i < someJobs.size(); i++) {
             HashMap<String,String> jobs = someJobs.get(i);
-            // TODO task 1.5 - scan through hashmap within the array and print each key/value pair with formatting //
-            for () {
-                System.out.println("*****" + jobs.getKey(k) + ":" + jobs.getValue(k) +"%n");
+            // Appears to be working but IDK if it's an ideal solution - new line syntax for Java isn't working //
+            // Doesn't reflect the Pro Tip and may not include a new column that's added //
+            System.out.println("*****");
+            System.out.println("position type: " + jobs.get("position type"));
+            System.out.println("name: " + jobs.get("name"));
+            System.out.println("employer: " + jobs.get("employer"));
+            System.out.println("location: " + jobs.get("location"));
+            System.out.println("core competency: " + jobs.get("core competency"));
+            System.out.println("*****");
+
             }
 
         }
     }
-}

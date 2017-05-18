@@ -7,9 +7,8 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+import java.io.*;
 
 /**
  * Created by LaunchCode
@@ -71,33 +70,42 @@ public class JobData {
         loadData();
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        String lowerValue = value.toLowerCase();
 
         for (HashMap<String, String> row : allJobs) {
 
+            // Finally cracked it! //
             String aValue = row.get(column);
-
-            if (aValue.contains(value)) {
-                jobs.add(row);
+            for (Map.Entry<String,String> lower: row.entrySet()) {
+                String val = lower.getValue();
+                String lowerString = val.toLowerCase();
+                if (lowerString.contains(lowerValue)) {
+                    jobs.add(row);
+                }
             }
         }
 
         return jobs;
     }
 
-    // TODO Task 2 - findByValue option - lets you search within the strings - call from "somewhere in main" search for string in each column - no duplicate returns - if included - return and move on//
-
-    // Needs return statement - how to return something simple/string with a hashmap as your expected return value? //
+    // Task 2 - Done!  With task 3 case sensitivity rule in effect//
 
    public static ArrayList<HashMap<String, String>> findByString(String search) {
 
         loadData();
 
         ArrayList<HashMap<String, String>> sort = new ArrayList<>();
+        String lowerSearch = search.toLowerCase();
 
         // generating a hashmap for each row of data, named row //
-        for (HashMap <String,String> row : allJobs) {
-            //if (row.toLowerCase().containsValue(search.toLowerCase()))//
-                sort.add(row);
+        for (HashMap<String,String> row : allJobs) {
+            //find value (String) in HashMap and convert to lower case as lowerString //
+            for (Map.Entry<String, String> lower: row.entrySet()) {
+                String val = lower.getValue();
+                String lowerString = val.toLowerCase();
+                if (lowerString.contains(lowerSearch))
+                    sort.add(row);
+                }
         } return sort;
     }
     /**
