@@ -65,7 +65,8 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    // Part of Task 2 - calling findByString in main function //
+                    printJobs(JobData.findByString(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
@@ -116,9 +117,12 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
         // Complete - print out job info - read arraylist to locate and print hashmap values 1 row at a time //
-        for (Integer i = 0; i < someJobs.size(); i++) {
-            // TODO Task 1.2 - How to format with leading asterisks and make a new line at each comma? //
-            System.out.println(someJobs.get(i));
+        for (int i = 0; i < someJobs.size(); i++) {
+            HashMap<String,String> jobs = someJobs.get(i);
+            // TODO task 1.5 - scan through hashmap within the array and print each key/value pair with formatting //
+            for () {
+                System.out.println("*****" + jobs.getKey(k) + ":" + jobs.getValue(k) +"%n");
+            }
 
         }
     }

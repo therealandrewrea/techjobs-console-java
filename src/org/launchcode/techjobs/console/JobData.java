@@ -88,19 +88,17 @@ public class JobData {
 
     // Needs return statement - how to return something simple/string with a hashmap as your expected return value? //
 
-    public static HashMap<String, String> findByString(String search) {
+   public static ArrayList<HashMap<String, String>> findByString(String search) {
 
         loadData();
 
         ArrayList<HashMap<String, String>> sort = new ArrayList<>();
 
-        for (Integer i = 0; i < sort.size(); i++) {
-            if (sort.contains(search)) {
-                return sort.get(i);
-            } else {
-                return "No matches found";
-            }
-        }
+        // generating a hashmap for each row of data, named row //
+        for (HashMap <String,String> row : allJobs) {
+            //if (row.toLowerCase().containsValue(search.toLowerCase()))//
+                sort.add(row);
+        } return sort;
     }
     /**
      * Read in data from a CSV file and store it in a list
